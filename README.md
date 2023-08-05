@@ -4,7 +4,7 @@ I built a React Native Mobile app with [Expo](https://expo.dev/), where you can 
 
 To get started.
 ```
-       Add a secret.ts file based on secret.example.ts file and add respective keys.
+       Add a src/secret.ts file based on src/secret.example.ts file and add respective keys.
       
        Generate an Expo development build for development and a preview one for testing purposes.
       
@@ -12,4 +12,4 @@ To get started.
 
 Go to [Mobile (React Native with Expo) DALL-E Image Gallery Video](https://youtu.be/Axt1it17200) page
 
-Go to [Mobile (React Native with Expo) DALL-E Image Gallery Description](https://ashot72.github.io/Mobile-DALL-E-Image-Gallery/doc.html) page
+Go to [Mobile (React Native with Expo) DALL-E Image Gallery Description](https://ashot72.github.io/Mobile-DALL-E-Image-Gallery/docs.html) page
