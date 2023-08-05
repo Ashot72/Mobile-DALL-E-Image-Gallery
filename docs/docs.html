@@ -1,0 +1,215 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:8.0pt;
+	margin-left:0in;
+	line-height:107%;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;}
+a:link, span.MsoHyperlink
+	{color:#0563C1;
+	text-decoration:underline;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:8.0pt;
+	line-height:107%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link="#0563C1" vlink="#954F72" style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:20.0pt;line-height:107%'>Mobile (React Native with Expo) DALL-E
+Image Gallery</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Video Link: <a
+href="https://youtu.be/Axt1it17200" target="_blank">https://youtu.be/Axt1it17200</a></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>GitHub
+Repository: <a href="https://github.com/Ashot72/Mobile-DALL-E-Image-Gallery"
+target="_blank">https://github.com/Ashot72/Mobile-DALL-E-Image-Gallery</a></span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>I built a
+React Native Mobile app with Expo, <a href="https://expo.dev/" target="_blank">https://expo.dev/</a>
+where you can generate a DALL-E image with a voice prompt. The app implements a
+</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>text-to-sound
+feature that allows you to listen to the prompts using voice. The app uses
+Microsoft Azure Identity for login in a React Native app.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>To allow the
+application to interact with the Microsoft server, it needs to be registered
+through Microsoft Application Registration Portal. </span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>The app data
+are saved into a SharePoint list.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'><img
+border=0 width=946 height=574 id="Picture 1" src="docs_files/image001.jpg"></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 1</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>I registered
+MS Auth app.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'><img
+border=0 width=625 height=536 id="Picture 2" src="docs_files/image002.png"></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 2</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Once the app
+is registered, an Application ID will be generated.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'><img
+border=0 width=716 height=476 id="Picture 3" src="docs_files/image003.jpg"></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 3</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>To get the
+authentication to work on React Native without using other third-party
+libraries, we will utilize the </span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>WebView
+component and specify the Redirect URI inside the app. Consequently, we will
+need a secret key for </span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>communicating
+with the Microsoft Authentication service through the web interface.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'><img
+border=0 width=826 height=558 id="Picture 4" src="docs_files/image004.jpg"></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 4</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>We created
+the secret, but there is one more thing: we need to inform Microsoft about the
+platform on which we are going to integrate this app.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'><img
+border=0 width=984 height=307 id="Picture 5" src="docs_files/image005.jpg"></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 5</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>We go to
+Authentication -&gt; Add a platform -&gt; Web, add that platform as we will be
+using JavaScript to access the service.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'><img
+border=0 width=984 height=600 id="Picture 6" src="docs_files/image006.jpg"></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 6</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Once a user is
+authenticated, he can interact with SharePoint lists, create a list, add a list
+item etc.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'><img
+border=0 width=984 height=528 id="Picture 7" src="docs_files/image007.jpg"></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 7</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>You see,
+instead of a hyperlink column, we created a multiline text column for an image
+URL.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'><img
+border=0 width=1000 height=567 id="Picture 8" src="docs_files/image008.jpg"></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 8</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>The reason
+is that hyperlink column is not supported.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'><img
+border=0 width=1005 height=677 id="Picture 9" src="docs_files/image009.png"></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 9</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>We use EAS
+Build server to build both development and preview builds.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'><img
+border=0 width=993 height=497 id="Picture 10" src="docs_files/image010.jpg"></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 10</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Building
+both development and preview builds.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'><img
+border=0 width=988 height=502 id="Picture 11" src="docs_files/image011.jpg"></span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>Figure 11</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>We use
+OpenAI</span><span style='font-size:14.0pt;line-height:107%;color:black'>'</span></span><span
+style='font-size:14.0pt;line-height:107%'>s DALL-E endpoint to generate 512x512
+images from prompts.</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:14.0pt;line-height:107%'>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>

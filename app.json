@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "spfx-gallery",
+    "name": "AI Image Gallery",
     "slug": "spfx-gallery",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -21,10 +21,19 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.ashot1972.imagegallery"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },    
+    "extra": {
+      "eas": {
+        "projectId": "08d1e92c-18a3-4ae6-9523-ca003e539cc5"
+      }
     }
   }
 }
