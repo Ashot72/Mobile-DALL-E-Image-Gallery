@@ -9,7 +9,7 @@ import GraphService from "../service/graph";
 import { IAuth } from "../interfaces";
 import { BLACK, GRAY, MEDIUMSLATEBLUE, WHITE } from "../colors"
 import { height, width } from "../dimentions";
-import Button from "../navigators/components/Button";
+import Button from "../components/Button";
 
 const HomeScreen = ({ navigation }: TabsStackScreenProps<"Home">) => {
     const [profileImage, setProfileImage] = useState("")

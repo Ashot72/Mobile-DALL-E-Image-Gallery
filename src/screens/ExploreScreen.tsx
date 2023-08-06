@@ -5,7 +5,7 @@ import * as Speech from 'expo-speech';
 import Swiper from "react-native-deck-swiper";
 import { TabsStackScreenProps } from "../navigators/TabsNavigator"
 import GraphService from "../service/graph";
-import CardItem from "../navigators/components/CartItem";
+import CardItem from "../components/CartItem";
 import { height, width } from "../dimentions";
 import { IAuth } from "../interfaces";
 import { MEDIUMSLATEBLUE } from "../colors"

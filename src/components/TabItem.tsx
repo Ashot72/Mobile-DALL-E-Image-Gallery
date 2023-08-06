@@ -1,6 +1,6 @@
 import { StyleSheet, TouchableOpacity, View, Text } from "react-native"
 import Icons from "@expo/vector-icons/MaterialIcons"
-import { GRAY, MEDIUMSLATEBLUE, WHITE } from "../../colors"
+import { GRAY, MEDIUMSLATEBLUE, WHITE } from "../colors"
 
 interface ITabItem {
     routeName: String

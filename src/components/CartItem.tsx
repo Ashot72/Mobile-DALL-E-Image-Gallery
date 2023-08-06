@@ -1,7 +1,7 @@
 import { View, StyleSheet, Image, Text } from "react-native"
-import { CardItemT } from "../../interfaces"
-import { width } from "../../dimentions"
-import { BLACK, MEDIUMSLATEBLUE, WHITE } from "../../colors"
+import { CardItemT } from "../interfaces"
+import { width } from "../dimentions"
+import { BLACK, MEDIUMSLATEBLUE, WHITE } from "../colors"
 import DeleteImage from "./DeleteImage"
 
 const CardItem = ( { id, Image: img, Prompt, Name, userPrincipalName, Email, onDelete }: CardItemT ) => {

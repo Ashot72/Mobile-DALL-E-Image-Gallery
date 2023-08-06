@@ -1,10 +1,10 @@
 import { BottomTabBarProps, BottomTabScreenProps, createBottomTabNavigator } from "@react-navigation/bottom-tabs"
 import { CompositeScreenProps } from "@react-navigation/native"
 import { RootStackScreenProps } from "./RootNavigators"
-import CustomBottomTabs from "./components/CustomBottomTabs"
+import CustomBottomTabs from "../components/CustomBottomTabs"
 import HomeScreen from "../screens/HomeScreen"
 import RecordScreen from "../screens/RecordScreen"
-import ExploreScreen from "../screens/ExploreScreen" // indexov anel
+import ExploreScreen from "../screens/ExploreScreen" 
 import { MEDIUMSLATEBLUE } from "../colors"
 
 export type TabsStackParamList = {

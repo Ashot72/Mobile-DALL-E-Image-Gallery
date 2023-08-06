@@ -1,9 +1,9 @@
 import { useState } from "react"
 import { Alert, TouchableOpacity, StyleSheet, ActivityIndicator } from "react-native"
 import Icons from "@expo/vector-icons/MaterialIcons"
-import { BLACK, GRAY, MEDIUMSLATEBLUE, WHITE } from "../../colors"
-import GraphService from "../../service/graph"
-import { IDeleteListItem } from "../../interfaces";
+import { BLACK, GRAY, MEDIUMSLATEBLUE, WHITE } from "../colors"
+import GraphService from "../service/graph"
+import { IDeleteListItem } from "../interfaces";
 
 const DeleteImage = ({ Id, onDelete }: IDeleteListItem) => {
     const [del, setDel] = useState(false)

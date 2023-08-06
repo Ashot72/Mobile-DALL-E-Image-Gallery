@@ -9,7 +9,7 @@ import GraphService from "../service/graph"
 import { IAuth } from "../interfaces"
 import { BLACK, MEDIUMSLATEBLUE, WHITE } from "../colors"
 import { width, height } from "../dimentions"
-import Button from "../navigators/components/Button"
+import Button from "../components/Button"
 
 const RecordScreen = ({ navigation }: TabsStackScreenProps<"Record">) => {
     const [result, setResult] = useState('')
@@ -57,7 +57,7 @@ const RecordScreen = ({ navigation }: TabsStackScreenProps<"Record">) => {
                     Email: authParsed.userPrincipalName
                 })   
                 navigation.navigate("Explore")  
-                del()   
+                setDefault()   
             } catch(e:any) {
                 Alert.alert("Error", e.message)
             } finally {
@@ -65,7 +65,7 @@ const RecordScreen = ({ navigation }: TabsStackScreenProps<"Record">) => {
             }
     }
 
-    const del = () => {
+    const setDefault = () => {
         setResult("")
         setDalleImage("")
     }
@@ -173,7 +173,7 @@ const RecordScreen = ({ navigation }: TabsStackScreenProps<"Record">) => {
                                     Save
                             </Button>
                             <Button 
-                                onPress={() => del()} 
+                                onPress={() => setDefault()} 
                                 style={ styles.button }>
                                     Delete
                             </Button>
