@@ -1,14 +1,13 @@
 import { View } from "react-native"
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
-import { useTheme } from "@react-navigation/native"
 import  { SafeAreaView } from "react-native-safe-area-context"
 import TabItem from "./TabItem";
+import { WHITE } from "../colors";
 
 const CustomBottomTabs = (props: BottomTabBarProps) => {
-    const { colors } = useTheme()
 
     return (
-        <SafeAreaView edges={["bottom"]} style={{ backgroundColor: colors.card}}>
+        <SafeAreaView edges={["bottom"]} style={{ backgroundColor: WHITE }}>
             <View
               style={{
                 flexDirection: "row",

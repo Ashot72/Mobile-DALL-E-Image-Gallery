@@ -244,7 +244,7 @@ const styles = StyleSheet.create({
     },
     loader: {
         marginTop: 70,
-        backgroundColor: "WHITE"
+        backgroundColor: WHITE
     }
 })
 

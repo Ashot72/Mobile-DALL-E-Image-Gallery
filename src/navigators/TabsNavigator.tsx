@@ -5,7 +5,7 @@ import CustomBottomTabs from "../components/CustomBottomTabs"
 import HomeScreen from "../screens/HomeScreen"
 import RecordScreen from "../screens/RecordScreen"
 import ExploreScreen from "../screens/ExploreScreen" 
-import { MEDIUMSLATEBLUE } from "../colors"
+import { MEDIUMSLATEBLUE, WHITE } from "../colors"
 
 export type TabsStackParamList = {
    Home: undefined,
@@ -27,7 +27,7 @@ const TabNavigator = () => {
           screenOptions={{
             tabBarShowLabel: false,
             headerStyle: {backgroundColor: MEDIUMSLATEBLUE },
-            headerTintColor: 'white'    
+            headerTintColor: WHITE   
           }}
           tabBar={(props: BottomTabBarProps) => <CustomBottomTabs { ...props} />}
       >

@@ -8,7 +8,7 @@ import GraphService from "../service/graph";
 import CardItem from "../components/CartItem";
 import { height, width } from "../dimentions";
 import { IAuth } from "../interfaces";
-import { MEDIUMSLATEBLUE } from "../colors"
+import { MEDIUMSLATEBLUE, WHITE } from "../colors"
 
 const ExploreScreen = ({ navigation }: TabsStackScreenProps<"Explore">) => {
      const [items, setItems] = useState<any>([]) 
@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
       },
       loader: {
         marginTop: 23,
-        backgroundColor: "WHITE"
+        backgroundColor: WHITE
     }   
 })
 
