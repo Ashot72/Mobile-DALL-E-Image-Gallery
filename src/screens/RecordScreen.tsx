@@ -113,9 +113,7 @@ const RecordScreen = ({ navigation }: TabsStackScreenProps<"Record">) => {
                         Voice.onSpeechResults = speechResultsHandler
                         Voice.onSpeechError = speechErrorHandler
                 
-                        return () => {
-                            Voice.destroy().then(Voice.removeAllListeners)
-                        }
+                        return () => Voice.destroy().then(Voice.removeAllListeners)
                     }          
                 } catch(e: any) {
                     Alert.alert("Error", e.message)
