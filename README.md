@@ -12,7 +12,7 @@ To get started.
        # installs dependencies
        npm install
        
-       Add a src/secret.ts file based on src/secret.example.ts file and add respective keys.
+       Add .env file based on .env.example file and add respective keys.
       
        Generate an Expo development build for development and a preview one for testing purposes.
       

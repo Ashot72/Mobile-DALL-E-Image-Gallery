@@ -5,11 +5,13 @@ import { Alert } from "react-native"
 import { AzureInstance, AzureLoginView } from "../../lib"
 import { RootStackScreenProps } from "../navigators/RootNavigators"
 import { redirect_uri, scope } from "../constants"
-import { client_id, client_secret } from "../secret"
 
 const SignInScreen = ({ navigation }: RootStackScreenProps<"SignIn">) => {
     const [loginSuccess, setLoginSuccess] = useState(false)
- 
+
+    const client_id = process.env.EXPO_PUBLIC_CLIENT_ID
+    const client_secret = process.env.EXPO_PUBLIC_CLIENT_SECRET
+
     const credentials =  { client_id, client_secret, redirect_uri, scope }
     const azureInstance = new AzureInstance(credentials)
 

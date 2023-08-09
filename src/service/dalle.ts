@@ -1,5 +1,3 @@
-import { apiKey } from "../secret";
-
 const dalleUrl = 'https://api.openai.com/v1/images/generations';
 
 const dalleApiCall = async (prompt: string) => {
@@ -9,7 +7,7 @@ const dalleApiCall = async (prompt: string) => {
            method: "POST",    
            headers: {
                  'content-type': 'application/json',
-                 Authorization: `Bearer ${apiKey}`
+                 Authorization: `Bearer ${process.env.EXPO_PUBLIC_APIKEY}`
              },
                  body: JSON.stringify({
                     prompt,
