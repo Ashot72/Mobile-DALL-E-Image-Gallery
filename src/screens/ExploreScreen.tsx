@@ -67,21 +67,23 @@ const ExploreScreen = ({ navigation }: TabsStackScreenProps<"Explore">) => {
                source={require("../../assets/images/bg.png")}
               style={styles.bg}>            
                 { items.length > 0 && 
-                <>
-                    { loader && <ActivityIndicator size="large" style={styles.loader} color={ MEDIUMSLATEBLUE } /> }
-                    <Swiper
-                        ref = {swiperRef }
-                        onSwiped = { onSwiped }
-                        cards = {items}
-                        infinite={true}
-                        showSecondCard={items.length === 1 ? false: true} 
-                        stackSize={2}
-                        verticalSwipe={false}
-                        horizontalSwipe={items.length === 1 ? false : true }
-                        renderCard={(item:any) =>  item ? 
-                           <CardItem  { ...item.fields } userPrincipalName={userPrincipalName} onDelete = {onDelete} /> : <View/>}        
-                    />
-                 </>
+                 <>
+                 { loader && <ActivityIndicator size="large" style={styles.loader} color={ MEDIUMSLATEBLUE } /> }
+                 { userPrincipalName && 
+                     <Swiper
+                         ref = {swiperRef }
+                         onSwiped = { onSwiped }
+                         cards = {items}
+                         infinite={true}
+                         showSecondCard={items.length === 1 ? false: true} 
+                         stackSize={2}
+                         verticalSwipe={false}
+                         horizontalSwipe={items.length === 1 ? false : true }
+                         renderCard={(item:any) =>  item ? 
+                         <CardItem  { ...item.fields } userPrincipalName={userPrincipalName} onDelete = {onDelete} /> : <View/>}        
+                     />
+                 }
+              </>
                 }  
                               
             </ImageBackground>
