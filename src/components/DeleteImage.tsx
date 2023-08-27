@@ -3,7 +3,11 @@ import { Alert, TouchableOpacity, StyleSheet, ActivityIndicator } from "react-na
 import Icons from "@expo/vector-icons/MaterialIcons"
 import { BLACK, GRAY, MEDIUMSLATEBLUE, WHITE } from "../colors"
 import GraphService from "../service/graph"
-import { IDeleteListItem } from "../interfaces";
+
+export interface IDeleteListItem  {
+    Id: string
+    onDelete: () => void
+}
 
 const DeleteImage = ({ Id, onDelete }: IDeleteListItem) => {
     const [del, setDel] = useState(false)

@@ -51,7 +51,8 @@ const RecordScreen = ({ navigation }: TabsStackScreenProps<"Record">) => {
               const authParsed: IAuth = JSON.parse(auth!)
 
               await GraphService.addListItem({
-                    Title: "Gallery", Prompt: result, 
+                    Title: "Gallery", 
+                    Prompt: result, 
                     Image: dalleImage, 
                     Name:  authParsed.displayName,  
                     Email: authParsed.userPrincipalName
@@ -93,12 +94,22 @@ const RecordScreen = ({ navigation }: TabsStackScreenProps<"Record">) => {
                 setRecording(false)     
                 setImage()
             } else {
-                Alert.alert("Warning", "Please wait to get the picture from the server.")
+                Alert.alert("Warning", "Please wait to generate the prompt from the voice.")
             }
         } catch(error) {
             console.log('error: ', error)
         }
     }
+
+    useEffect(() => {
+        Voice.onSpeechStart = speechStartHandler
+        Voice.onSpeechResults = speechResultsHandler
+        Voice.onSpeechError = speechErrorHandler  
+
+        return () => {
+            Voice.destroy().then(Voice.removeAllListeners)
+        }
+    }, [])
 
     useEffect(() => {
         const unsubscribe = navigation.addListener('focus', async () => {
@@ -108,12 +119,7 @@ const RecordScreen = ({ navigation }: TabsStackScreenProps<"Record">) => {
                     if(!auth) {
                         navigation.navigate("Home")
                     } else {
-                        setAuth(true)
-                        Voice.onSpeechStart = speechStartHandler
-                        Voice.onSpeechResults = speechResultsHandler
-                        Voice.onSpeechError = speechErrorHandler
-                
-                        return () => Voice.destroy().then(Voice.removeAllListeners)
+                        setAuth(true)            
                     }          
                 } catch(e: any) {
                     Alert.alert("Error", e.message)
@@ -121,7 +127,7 @@ const RecordScreen = ({ navigation }: TabsStackScreenProps<"Record">) => {
             })();
         })
 
-        return unsubscribe;
+        return unsubscribe
     }, [])
 
     return (

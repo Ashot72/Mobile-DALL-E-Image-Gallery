@@ -46,7 +46,9 @@ const ExploreScreen = ({ navigation }: TabsStackScreenProps<"Explore">) => {
         try {
            const listItems = await GraphService.getListItems()  
            setItems(listItems.value);
-           (swiperRef.current as any).jumpToCardIndex(0)
+           if(swiperRef.current) {
+            (swiperRef.current as any).jumpToCardIndex(0)
+           }         
         } catch(e: any) {
             Alert.alert("Error", e.message)
         }

@@ -1,10 +1,16 @@
 import { View, StyleSheet, Image, Text } from "react-native"
-import { CardItemT } from "../interfaces"
+import { IListItem } from "../interfaces"
 import { width } from "../dimentions"
 import { BLACK, MEDIUMSLATEBLUE, WHITE } from "../colors"
 import DeleteImage from "./DeleteImage"
 
-const CardItem = ( { id, Image: img, Prompt, Name, userPrincipalName, Email, onDelete }: CardItemT ) => {
+
+export interface ICardItem extends IListItem {    
+    userPrincipalName: string,
+    onDelete: () => void
+}
+
+const CardItem = ( { id, Image: img, Prompt, Name, userPrincipalName, Email, onDelete }: ICardItem ) => {
 
     return (
         <View style={styles.container}>
